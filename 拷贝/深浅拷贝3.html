@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            a: 1,
+            b: ['red', 'blue', 'pink'],
+            c: 3,
+            d: function() {
+                var a = 1;
+            }
+        };
+        //var obj1 = {};
+        // for (k in obj) {
+        //     if (obj1[k] == undefined) {
+        //         obj1[k] = obj[k];
+        //     }
+        // }
+        // obj1.b[1] = 'black';
+        // console.log(obj);
+        // console.log(obj1);
+
+        function objCopy(obj) {
+            if (obj && typeof obj === 'object') {
+                newObj = Array.isArray(obj) ? [] : {};
+                newObj = JSON.stringify(obj);
+                console.log(newObj);
+                newObj = JSON.parse(newObj);
+                console.log(newObj);
+                return newObj;
+            } else {
+                return obj;
+            }
+
+        }
+        var obj1 = objCopy(obj);
+        obj1.b[0] = 'black';
+        obj1.b[1] = 'tan';
+        console.log(obj);
+        console.log(obj1);
+    </script>
+</body>
+
+</html>

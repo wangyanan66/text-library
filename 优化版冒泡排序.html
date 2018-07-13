@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [234, 12, 34, 56, 56, 7, 546, 43];
+        var countA = 0;
+        var countB = 0;
+        for (var i = 0; i < arr.length - 1; i++) { //外层循坏7
+            countA++;
+            var flag = true;
+            if (flag) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        flag = false;
+                    }
+                    countB++;
+                }
+            } else {
+                break;
+            }
+        }
+        // for (var i = 0; i < arr.length - 1; i++) { //外层循坏7
+        //     countA++;
+        //     flag = true;
+        //     for (var j = 0; j < arr.length - i - 1; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             var temp = arr[j];
+        //             arr[j] = arr[j + 1];
+        //             arr[j + 1] = temp;
+        //             flag = false;
+        //         }
+        //         countB++;
+        //     }
+        //     if (flag) {
+        //         break;
+        //     }
+        // }
+        console.log(arr);
+        console.log(countA);
+        console.log(countB);
+    </script>
+</body>
+
+</html>

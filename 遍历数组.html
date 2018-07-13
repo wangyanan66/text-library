@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍历数组，并在控制泰中输出k:v的形式
+        var json_arr = [{
+            name: 'a',
+            value: 'aa'
+        }, {
+            name: 'b',
+            value: 'bb'
+        }, {
+            name: 'c',
+            value: 'cc'
+        }, {
+            name: 'd',
+            value: 'dd'
+        }, ];
+
+        for (var i = 0; i < json_arr.length; i++) {
+            var json_obj = json_arr[i];
+            for (var k in json_obj) {
+                console.log(k + ':' + json_obj[k]);
+            }
+        }
+    </script>
+</body>
+
+</html>

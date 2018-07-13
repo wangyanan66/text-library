@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            a: 1,
+            b: ['red', 'blue', 'yellow'],
+            c: 3,
+            d: function(a) {
+                var a = 1;
+            }
+        };
+        function objCopy(obj, copy) {
+            if (obj && typeof obj === 'object') {
+                copy = Array.isArray(obj) ? [] : {};
+                for (var key in obj) {
+                    if (typeof obj[key] === 'object') {
+                        copy[key] = objCopy(obj[key], copy[key]);
+                    } else {
+                        copy[key] = obj[key];
+                    }
+                }
+                return copy;
+            } else {
+                return obj;
+            }
+        }
+        var obj1 = objCopy(obj, obj1);
+        obj1.b[1] = 'black';
+        obj1.d(3);
+        console.log(obj);
+        console.log(obj1);
+    </script
+</body>
+
+</html>
